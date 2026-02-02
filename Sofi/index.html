@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#ff4d7d" />
+  <title>Para mi persona favorita 💖</title>
+  <meta name="description" content="Tengo una pregunta para ti… 💌" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icons/icon-192.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="stars" aria-hidden="true"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="chip">💘 Especial para <span id="herNameTop">ti</span></div>
+    <button class="music" id="musicBtn" type="button" aria-label="Música">
+      <span id="musicIcon">♫</span>
+      <span id="musicLabel">Música</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="card hero">
+      <div class="hero__left">
+        <h1 class="title">
+          <span class="soft">Hola</span> <span id="herName" class="accent">amor</span> ✨
+        </h1>
+        <p class="subtitle" id="typewriter"></p>
+
+        <div class="mini">
+          <div class="mini__item">
+            <div class="mini__k">Desde</div>
+            <div class="mini__v" id="since"></div>
+          </div>
+          <div class="mini__item">
+            <div class="mini__k">Contador</div>
+            <div class="mini__v"><span id="counter"></span> <span class="muted">días</span></div>
+          </div>
+        </div>
+
+        <a class="cta" href="#pregunta">Ver la pregunta 💌</a>
+      </div>
+
+      <div class="hero__right">
+        <div class="frame">
+          <img id="heroPhoto" alt="Foto nuestra" />
+          <div class="frame__shine" aria-hidden="true"></div>
+        </div>
+        <div class="hint">Desliza la galería ↓</div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="card">
+      <div class="sectionHead">
+        <h2>Momentos que me hacen sonreír</h2>
+        <p class="muted">Desliza a los lados en el carrusel 📸</p>
+      </div>
+
+      <div class="carousel" id="carousel">
+        <button class="nav prev" id="prevBtn" aria-label="Anterior">‹</button>
+        <div class="track" id="track"></div>
+        <button class="nav next" id="nextBtn" aria-label="Siguiente">›</button>
+      </div>
+
+      <div class="dots" id="dots" aria-label="Indicador"></div>
+    </section>
+
+    <!-- RECUERDITOS -->
+    <section class="card">
+      <div class="sectionHead">
+        <h2>Nuestros recuérditos</h2>
+        <p class="muted">Pequeñas cosas que me encantan de ti.</p>
+      </div>
+
+      <div class="grid" id="memories"></div>
+    </section>
+
+    <!-- LÍNEA DE TIEMPO -->
+    <section class="card">
+      <div class="sectionHead">
+        <h2>Mini línea de tiempo</h2>
+        <p class="muted">Lo que hemos construido, pasito a pasito.</p>
+      </div>
+
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- PREGUNTA FINAL -->
+    <section class="card ask" id="pregunta">
+      <h2 class="ask__title">Y ahora sí…</h2>
+      <p class="ask__text">
+        <span id="herNameAsk">Amor</span>, ¿quieres ser mi <strong>San Valentín</strong> este <span id="valDay"></span>? 💝
+      </p>
+
+      <div class="buttons">
+        <button class="btn yes" id="yesBtn">Sí 💖</button>
+        <button class="btn maybe" id="maybeBtn">Obvio ✨</button>
+        <button class="btn no" id="noBtn">No 🙈</button>
+      </div>
+
+      <p class="tiny muted"></p>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__card" role="dialog" aria-modal="true">
+        <div class="modal__heart">💘</div>
+        <h3 id="modalTitle">¡Siiiii!</h3>
+        <p id="modalText"></p>
+        <button class="btn close" id="closeModal">Cerrar</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Hecho con amor por <span id="yourNameFoot">yo</span> 🖤
+    </footer>
+  </main>
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
